@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-生成比赛用的所有 QR 码 PNG 图片.
+Generate QR-code PNG images for the logistics-robot field.
 
 Full Plan C3 规定的 QR 码内容格式:
   START        出发点
@@ -11,7 +11,6 @@ Full Plan C3 规定的 QR 码内容格式:
   END          目的区
 
 用法:
-  python3 qr_generate.py                    # 默认用 4X6M 做队伍串
   python3 qr_generate.py --team 7A2B        # 指定队伍串
   python3 qr_generate.py --out /tmp/qr      # 指定输出目录
 """
@@ -54,7 +53,7 @@ def generate(team: str, out_dir: str, box_size: int = 20, border: int = 4):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--team", default="4X6M", help="队伍 4 位随机串 (默认 4X6M)")
+    ap.add_argument("--team", required=True, help="队伍 4 位随机串")
     ap.add_argument("--out", default="qr_codes", help="输出目录")
     ap.add_argument("--box-size", type=int, default=20, help="每格像素")
     args = ap.parse_args()

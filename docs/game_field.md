@@ -52,9 +52,14 @@ DESTINATION = (-0.80, 1.10, yaw=π/2)   # 左上, 朝上
 
 ## QR 码规格
 
-**6 张 PNG** 已生成在 `scripts/qr_codes/` (队伍串 `4X6M`, 换团队要改):
+**6 张 PNG** 可生成到 `scripts/qr_codes/`:
+
+```bash
+python3 scripts/qr_generate.py --team <TEAM_CODE> --out scripts/qr_codes
+```
+
 - `START.png`
-- `RACKA_4X6M.png`, `RACKB_4X6M.png`, `RACKC_4X6M.png`, `RACKD_4X6M.png`
+- `RACKA_<TEAM_CODE>.png`, `RACKB_<TEAM_CODE>.png`, `RACKC_<TEAM_CODE>.png`, `RACKD_<TEAM_CODE>.png`
 - `END.png`
 
 **打印规格**:
